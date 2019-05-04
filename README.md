@@ -1,9 +1,9 @@
 # PURE JS
 
-<u>index.html</u><br>
+<b>index.html</b><br>
 -next previous slides<br>
 -pagination<br>
 <br>
-<u>Navbar</u><br>
+<b>navbar.html</b><br>
 -responsive menu<br>
 -canvas style
