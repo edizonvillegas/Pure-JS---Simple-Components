@@ -1,6 +1,6 @@
 # PURE JS
 
-<b>index.html</b><br>
+<b>slider.html</b><br>
 -next previous slides<br>
 -pagination<br>
 <br>
