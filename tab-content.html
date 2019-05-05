@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.accordion li {
+			float: left;
+		}
+		.accordion:after {
+			content: "";
+			clear: both;
+			display: table;
+		}
+		.accordion li {
+			list-style: none;
+		}
+		.accordion li a {
+			padding: 7px 15px;
+		}
+		.content {
+			display: none;
+		}
+		.accordion-contents .active {
+			display: block;
+		}
+		.accordion .active a {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	
+	<nav>
+		<ul class="accordion">
+			<li class="active"><a href="#content01">Section 01</a></li>
+			<li><a href="#content02">Section 02</a></li>
+			<li><a href="#content03">Section 03</a></li>
+			<li><a href="#content04">Section 04</a></li>
+			<li><a href="#content05">Section 05</a></li>
+		</ul>
+	</nav>
+	<div class="accordion-contents">
+		<div id="content01" class="content active">
+			01
+		</div>
+		<div id="content02" class="content">
+			02
+		</div>
+		<div id="content03" class="content">
+			03
+		</div>
+		<div id="content04" class="content">
+			04
+		</div>
+		<div id="content05" class="content">
+			05
+		</div>
+	</div>
+
+	<script>
+		let tabList = document.querySelector('.accordion li.active'),
+			totalContent = document.querySelectorAll('.accordion li').length;
+		
+		this.addEventListener('click', (e) => {
+			if(e.target.hash) {
+				let targetId = e.target.hash.substr(1)
+				
+				for (var x = 0 ; x < totalContent; x++) {
+					document.querySelectorAll('.accordion li')[x].classList.remove('active')
+					document.getElementsByClassName('content')[x].classList.remove('active')
+				}
+
+				e.target.closest('li').classList.add('active')
+				document.getElementById(targetId).classList.add('active')
+			}
+		})
+		
+	</script>	
+</body>
+</html>
